@@ -1,0 +1,68 @@
+.heading{
+	font-family: 'Faster One', cursive;
+	font-size: 48px;
+}
+
+.container-fluid{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.iframe_row{
+	flex-grow: 1;
+}
+
+.iframe_col{
+	min-height: 100%;
+	display: flex;
+}
+
+.filter_cont{
+	display: flex;
+	flex-direction: row; /*set main axis*/
+	justify-content:center;/*align content along main axis*/
+	align-items: center;/*align content along cross axis*/
+	
+}
+
+iframe{
+	flex-grow: 1;
+	border: none;
+}
+
+
+
+.top5
+{
+	margin-top: 5px;
+}
+
+.top10
+{
+	margin-top: 10px;
+}
+
+.top20{
+	margin-top: 20px;
+}
+
+.myfooter{
+	padding: 5px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.btngrp-row{
+	margin-top: 10px;
+}
+
+.btngrp{
+	
+	display: flex;
+	flex-direction: row; /*set main axis*/
+	
+	justify-content:center;/*align content along main axis*/
+	align-items: center;/*align content along cross axis*/
+`	
+}

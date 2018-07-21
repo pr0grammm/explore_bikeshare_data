@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+
+<!--  heading-->
+<div class="row ">
+	<div class="col-md-12">
+		<div class="text-center heading h1">EXPLORE BIKESHARE DATA</div>
+	</div>
+</div>
+
+<!--form-->
+<div class="row top5">
+		<div class="col-md-12 filter_cont">
+			<form action="/postdata" method="post" target="data">
+			<!--drop downs-->
+			<!--city-->			
+				<select class="selectpicker" data-header="Select a city" id="city" name="city">
+					<option value="chicago">Chicago</option>
+					<option value="new york city">New York City</option>
+					<option value="washington">Washington</option>
+				</select>
+				<!--month-->
+				<select class="selectpicker" data-header="Select a month" id="month" name="month"><option value="all">All</option><option value="january">January</option><option value="february">February</option><option value="march">March</option><option value="april">April</option><option value="may">May</option><option value="june">June</option></select>
+				<!--day-->
+				<select class="selectpicker " data-header="Select a day" id="day" name="day"><option value="all">All</option><option value="monday">Monday</option><option value="tuesday">Tuesday</option><option value="wednesday">Wednesday</option><option value="thursday">Thursday</option><option value="friday">Friday</option><option value="saturday">Saturday</option><option value="sunday">Sunday</option></select>
+			<!--buttons-->
+				<input class="btn btn-default " id="submit_get_stats" name="submit" value="Get Statistics" type="submit">
+
+				<input class="btn btn-default " id="submit_view_raw_data" name="submit" value="View Raw Data" type="submit">
+			</form>									
+		</div><!--end of column-->
+	</div><!--end of row-->
+	
+<!--end of top of page-->
+<!--start of iframe -->
+<div class="row top20 iframe_row">
+	<div class="col-md-12 iframe_col">		
+		<iframe name="data" id="data"></iframe>	
+	</div>
+</div>
+
+<div class="row btngrp-row">
+				<div class="col-md-6 col-md-offset-3 ">	
+						<div class="btngrp" id="btngrp">
+						</div>
+				</div>
+</div>
+
+<footer class="myfooter h5 text-right">
+	<i class="fas fa-bicycle"></i>&nbsp;Developed by Reshma for Udacity bikeshare project, 2018
+</footer>
+</div><!--end of container-fluid-->
+
+{% endblock %}

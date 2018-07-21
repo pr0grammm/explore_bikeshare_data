@@ -1,0 +1,19 @@
+body{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+}
+h3{
+	font-family: 'Faster One', cursive;
+}
+
+.myicon{
+	font-size: 56px;
+	border-style: inset;
+	padding: 10px;
+	border-color: white;
+}
+
+.category{
+	margin-left: 20px;
+
+}
