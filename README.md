@@ -2,7 +2,8 @@
 To analyse and compute statistics on bikeshare data 
 
 # Requirements
-Distribution of conda
+1. Distribution of conda
+2. Mozilla Firefox Browser
 
 # Instructions to run flask app
 1.  `cd explore_bikeshare_data`
