@@ -10,11 +10,13 @@
 }
 
 .iframe_row{
+    display: inline-flex;
 	flex-grow: 1;
 }
 
 .iframe_col{
 	min-height: 100%;
+    flex-grow: 1;
 	display: flex;
 }
 
