@@ -13,7 +13,7 @@
 <!--form-->
 <div class="row top5">
 		<div class="col-md-12 filter_cont">
-			<form action="/postdata" method="post" target="data">
+			<form id ="fd" action="/postdata" method="post" target="data">
 			<!--drop downs-->
 			<!--city-->			
 				<select class="selectpicker" data-header="Select a city" id="city" name="city">
@@ -29,6 +29,9 @@
 				<input class="btn btn-default " id="submit_get_stats" name="submit" value="Get Statistics" type="submit">
 
 				<input class="btn btn-default " id="submit_view_raw_data" name="submit" value="View Raw Data" type="submit">
+
+				
+
 			</form>									
 		</div><!--end of column-->
 	</div><!--end of row-->
@@ -42,10 +45,10 @@
 </div>
 
 <div class="row btngrp-row">
-				<div class="col-md-6 col-md-offset-3 ">	
-						<div class="btngrp" id="btngrp">
-						</div>
+		<div class="col-md-6 col-md-offset-3 ">	
+				<div class="btngrp" id="btngrp">
 				</div>
+		</div>
 </div>
 
 <footer class="myfooter h5 text-right">
