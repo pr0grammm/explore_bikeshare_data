@@ -87,9 +87,9 @@ def time_stats(df, month_filter_set, day_filter_set):
     df['hour'] = df['Start Time'].dt.hour
     popular_start_hour = df['hour'].mode()[0]
 
-    return {'Most common month':popular_month, \
-    'Most common day of week':popular_day_of_week,\
-    'Most common hour of day':popular_start_hour}
+    return [('Most common month', popular_month), \
+    ('Most common day of week', popular_day_of_week) ,\
+    ('Most common hour of day', popular_start_hour)]
 
 
 def station_stats(df):
@@ -104,9 +104,9 @@ def station_stats(df):
     # find most frequent combination of start station and end station trip
     start, end = df.groupby(['Start Station','End Station']).size().idxmax()
 
-    return {'Most common start station':popular_start_station, \
-    'Most common end station':popular_end_station , \
-    'Most common trip':str(start) + ' -----> ' + str(end)}
+    return [('Most common start station', popular_start_station) , \
+    ('Most common end station', popular_end_station), \
+    ('Most common trip',str(start) + ' -----> ' + str(end))]
 
 
 def trip_duration_stats(df):
@@ -118,8 +118,8 @@ def trip_duration_stats(df):
     # find mean travel time
     mean_travel_time = total_travel_time/len(df)
 
-    return {'Total travel time (s)':total_travel_time, \
-    'Average travel time (s)':mean_travel_time}
+    return [('Total travel time (s)',total_travel_time), \
+    ('Average travel time (s)', mean_travel_time)]
 
 
 def user_stats(df):
@@ -133,21 +133,21 @@ def user_stats(df):
     Dependent          1
     '''
     user_series = pd.value_counts(df['User Type'])
-    user =  dict(zip(list(user_series.index), list(user_series)))
+    user =  list(zip(list(user_series.index), list(user_series)))
 
     # find counts of gender if applicable
     if 'Gender' in df.columns:
         gender_series = pd.value_counts(df['Gender'])
-        gender = dict(zip(list(gender_series.index),list(gender_series)))
+        gender = list(zip(list(gender_series.index),list(gender_series)))
 
     # find earliest, most recent, and most common year of birth if applicable
     if 'Birth Year' in df.columns:
         youngest = df['Birth Year'].max().astype(int)
         oldest = df['Birth Year'].min().astype(int)
         common = df['Birth Year'].mode()[0].astype(int)
-        age = {'Year of birth of youngest rider':youngest, \
-        'Year of birth of oldest rider':oldest, \
-        'Most common year of birth':common}
+        age = [('Year of birth of youngest rider',youngest), \
+        ('Year of birth of oldest rider', oldest), \
+        ('Most common year of birth', common)]
 
-    return {'Counts of each user':user, 'Counts of each gender':gender, \
-    'Birth year statistics':age}
+    return [('Counts of each user',user),('Counts of each gender',gender),\
+    ('Birth year statistics',age)]

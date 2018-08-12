@@ -27,7 +27,7 @@
 <div class="col-md-12">
     <div class="stat-header"><h3>#1 Popular Times of Travel :</h3><hr></div>
     <div>
-        {% for key,val in Time_stats.items() %}
+        {% for key,val in Time_stats %}
             {% if val %}  
                     <p>{{key}} : {{val}}</p>
             {% endif %}
@@ -41,7 +41,7 @@
 <div class="col-md-12">
     <div class="stat-header"><h3>#2 Popular Stations and Trip :</h3><hr></div>
     <div>
-        {% for key,val in Station_stats.items() %}
+        {% for key,val in Station_stats %}
             {% if val %}  
                 <p>{{key}} : {{val}}</p>
             {% endif %}
@@ -58,7 +58,7 @@
 <div class="col-md-12">
     <div class="stat-header"><h3>#3 Trip Duration  :</h3><hr></div>
     <div>
-        {% for key,val in Trip_duration_stats.items() %}
+        {% for key,val in Trip_duration_stats %}
             {% if val %}
                 <p>{{key}} : {{val}}</p>
             {% endif %}
@@ -75,7 +75,7 @@
         </div>
     
         <div class="row">
-            {% for key, val in User_stats.items() %}<!--{'Counts of each user': {'Subscriber': 220786, 'Customer': 79214}, 'Counts of each gender': None, 'Birth year statistics': None}-->
+            {% for key, val in User_stats %}<!--{'Counts of each user': {'Subscriber': 220786, 'Customer': 79214}, 'Counts of each gender': None, 'Birth year statistics': None}-->
                 {% if val %}
                     <div class="col-md-4">
                         <div class="panel panel-default">
@@ -87,7 +87,7 @@
                             <div class="panel-body">
                                 <table class="table table-condensed">
                                     <tbody>
-                                    {% for type, count in val.items() %}
+                                    {% for type, count in val %}
                                         <tr>
                                             <td>
                                                 {{type}}
